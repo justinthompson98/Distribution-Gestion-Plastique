@@ -1,0 +1,15 @@
+DÉPOSEZ LES LOGOS DE VOS CLIENTS ICI :
+=======================================
+Faites glisser et déposez vos fichiers de logos clients au format PNG ici.
+
+Renommez vos fichiers de logos exactement comme ceci pour qu'ils s'affichent automatiquement sur le site :
+- client1.png (remplacera Mécanique Auto Pro)
+- client2.png (remplacera Pneus Express Québec)
+- client3.png (remplacera Ok Pneus)
+- client4.png (remplacera Garage du Pontiac)
+- client5.png (remplacera Groupe Auto Prestige)
+- client6.png (remplacera Centre du Pneu Laurentides)
+
+Format recommandé : de forme carrée ou rectangulaire transparente, hauteur minimale de 80 pixels.
+
+Le site internet détectera automatiquement la présence de ces fichiers et les affichera à la place des logos temporaires correspondants !

@@ -1,0 +1,8 @@
+DÉPOSEZ VOTRE LOGO ICI :
+=========================
+Faites glisser et déposez votre fichier logo au format PNG ici.
+Nommez-le exactement : logo.png
+
+Le site internet détectera automatiquement la présence de ce fichier et l'affichera à la place du logo par défaut dans la barre de navigation et sur l'ensemble de l'application !
+
+Dimensions recommandées : de forme carrée ou ronde, minimum 200x200 pixels.

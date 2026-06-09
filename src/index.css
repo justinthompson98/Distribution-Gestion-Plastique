@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Redéfinition globale de la palette emerald pour notre nouveau thème bleu Distribution GP */
+  --color-emerald-50: #f4f6fa;   /* Gris-bleu très pâle, hyper propre et professionnel */
+  --color-emerald-100: #e4e9f3;  /* Gris-bleu pâle intermédiaire pour bordures douces et cartes */
+  --color-emerald-150: #d4dbe8;  /* Gris de transition haut de gamme */
+  --color-emerald-200: #bec9dc;  /* Tons de gris ardoise pâle */
+  --color-emerald-250: #a7b6cf;  /* Couleur d'accentuation d'arrière-plan */
+  --color-emerald-300: #8da0c0;  /* Bleu de lisibilité intermédiaire */
+  --color-emerald-350: #6f87b0;  /* Bleu acier pour sous-sections */
+  --color-emerald-400: #2a63d9;  /* Bleu électrique d'appel à l'action haute visibilité */
+  --color-emerald-450: #1c52cb;  /* Bleu électrique profond */
+  --color-emerald-500: #003ac1;  /* Teinte vive demandée par l'utilisateur (Boutons, Éléments clés) */
+  --color-emerald-600: #002c8d;  /* Teinte sombre demandée par l'utilisateur (Titres, Cartes principales) */
+  --color-emerald-700: #00226d;  /* Bleu marine chic */
+  --color-emerald-800: #00184c;  /* Bleu canard/encre très lisible pour les textes longs sur fond clair */
+  --color-emerald-850: #001138;  /* Encre noire bleutée */
+  --color-emerald-900: #000c27;  /* Bleu de nuit profond */
+  --color-emerald-950: #000615;  /* Noir bleuté pour thèmes sombres profonds, lisibilité optimale */
+}
