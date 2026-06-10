@@ -92,8 +92,15 @@ export function Products({ onSelectProduct }: ProductsProps) {
   ];
 
   return (
-    <section id="tarifs" className="pt-2 pb-6 px-4 md:px-8 bg-zinc-50 border-y border-zinc-100 selection:bg-emerald-950 selection:text-white scroll-mt-22">
-      <div className="max-w-7xl mx-auto">
+    <section id="tarifs" className="py-20 px-4 md:px-8 bg-linear-to-b from-[#e6eefd] via-[#f1f6fe] to-[#f8faff] border-t border-b border-zinc-200 text-zinc-900 relative overflow-hidden selection:bg-emerald-100 selection:text-emerald-900 scroll-mt-22">
+      
+      {/* Visual blueprint/grid pattern acting as a professional textured veil */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,44,141,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,44,141,0.03)_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_80%,transparent_100%)] pointer-events-none" />
+      
+      {/* Visual background lines */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_100%,var(--color-emerald-100)_15%,transparent_100%)] opacity-40 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Official Pricing Grid Matrice Table */}
         <div className="bg-white rounded-3xl border border-zinc-200/90 shadow-xl overflow-hidden mb-4">

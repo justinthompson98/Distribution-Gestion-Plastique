@@ -20,7 +20,7 @@ export function Navbar() {
                 <span className="font-sans font-extrabold text-[15px] sm:text-[17px] text-zinc-900 tracking-tight leading-none uppercase group-hover:text-emerald-600 transition-colors">
                   DISTRIBUTION
                 </span>
-                <span className="font-sans font-black text-[10px] sm:text-[11.5px] text-blue-600 tracking-widest leading-none uppercase mt-1.5">
+                <span className="font-sans font-black text-[10px] sm:text-[11.5px] text-emerald-600 tracking-widest leading-none uppercase mt-1.5">
                   GESTION PLASTIQUE
                 </span>
               </div>

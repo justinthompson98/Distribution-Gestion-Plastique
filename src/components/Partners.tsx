@@ -32,8 +32,15 @@ const PARTNER_LOGOS = [
 
 export function Partners() {
   return (
-    <section id="partenaires" className="py-24 bg-zinc-50 border-t border-b border-zinc-150 font-sans relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="partenaires" className="py-24 bg-linear-to-b from-[#e6eefd] via-[#f1f6fe] to-[#f8faff] border-t border-b border-zinc-200 text-zinc-900 relative overflow-hidden selection:bg-emerald-100 selection:text-emerald-900 font-sans">
+      
+      {/* Visual blueprint/grid pattern acting as a professional textured veil */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,44,141,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,44,141,0.03)_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_80%,transparent_100%)] pointer-events-none" />
+      
+      {/* Visual background lines */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_100%,var(--color-emerald-100)_15%,transparent_100%)] opacity-40 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header Section */}
         <div className="text-center max-w-3xl mx-auto mb-12">

@@ -1,5 +1,5 @@
 import step1Img from '../assets/images/gp_delivery_clean_1780079065159.png';
-import step2Img from '../assets/images/garagetir_rack_1780074095436.png';
+import step2Img from '../assets/images/recuperation_etape2.jpg';
 import step3Img from '../assets/images/gp_step3_recycling_1780072443291.png';
 import valorisationImg from '../assets/images/transparent_plastic_bags_repl_1780768347395_1780784260982.png';
 import gpBrandedBagWithTire from '../assets/images/hero/hero.png';

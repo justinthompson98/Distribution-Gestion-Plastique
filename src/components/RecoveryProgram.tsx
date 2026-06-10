@@ -35,9 +35,26 @@ export function RecoveryProgram() {
         
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-16 flex flex-col items-center justify-center">
-          <div className="mb-6 bg-white p-3 rounded-full shadow-2xl border border-emerald-500/20 flex items-center justify-center">
-            <SmartLogo size={110} className="mx-auto" />
-          </div>
+          <img 
+            src="/logo-programme.png" 
+            alt="Logo Programme" 
+            className="max-h-24 max-w-[240px] mb-6 object-contain"
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+              const sibling = e.currentTarget.nextSibling as HTMLElement;
+              if (sibling) {
+                sibling.style.display = 'block';
+              }
+            }}
+          />
+          <svg 
+            viewBox="0 0 512 512" 
+            className="w-16 h-16 text-[#7ca8d2] mb-6 flex-shrink-0"
+            fill="currentColor"
+            style={{ display: 'none' }}
+          >
+            <path d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4 0 51.1-23.7 96.7-60.8 126.9l27.1 24.6c8.5 7.7 9.8 20.8 2.8 30.1s-21.5 11.2-30.1 2.8l-72-65.5c-4.8-4.4-7.6-10.7-7.6-17.3s2.8-12.9 7.6-17.3l72-65.5c8.5-7.7 21.5-6.9 29.3 1.7 7.7 8.5 6.9 21.5-1.7 29.3l-20.9 19c25.4-21.6 41.5-53.7 41.5-89.6 0-9.8-1.2-19.3-3.5-28.4l-31.9 29.1c-8.5 7.7-21.5 6.9-29.3-1.7-7.7-8.5-6.9-21.5 1.7-29.3l43.3-39.4c8.5-7.7 21.5-6.9 29.3 1.7s6.9 21.5-1.7 29.3l-10.3 9.4 43.3-39.4c6.9-6.3 16.6-8.2 25.3-5zm-239.9 201.4c-8.7-3.2-18.4-.5-24.6 6.4l-39.4 43.3c-8.3-1.1-16.8-1.7-25.4-1.7-51.1 0-96.7 23.7-126.9 60.8l-24.6-27.1c-7.7-8.5-20.8-9.8-30.1-2.8s-11.2 21.5-2.8 30.1l65.5 72c4.4 4.8 10.7 7.6 17.3 7.6s12.9-2.8 17.3-7.6l65.5-72c7.7-8.5 6.9-21.5-1.7-29.3-8.5-7.7-21.5-6.9-29.3 1.7l-19 20.9c21.6-25.4 53.7-41.5 89.6-41.5 9.8 0 19.3 1.2 28.4 3.5l-29.1 31.9c-7.7 8.5-6.9 21.5 1.7 29.3 8.5 7.7 21.5 6.9 29.3-1.7l39.4-43.3c7.7-8.5 6.9-21.5-1.7-29.3s-21.5-6.9-29.3 1.7l-9.4 10.3 39.4-43.3c6.3-6.9 8.2-16.6 5-25.3zm-65.5-231.1l72 65.5c4.8 4.4 7.6 10.7 7.6 17.3s-2.8 12.9-7.6 17.3l-72 65.5c-8.5 7.7-21.5 6.9-29.3-1.7-7.7-8.5-6.9-21.5 1.7-29.3l20.9-19c-25.4 21.6-41.5 53.7-41.5 89.6 0 9.8 1.2 19.3 3.5 28.4l31.9-29.1c8.5-7.7 21.5-6.9 29.3 1.7 7.7 8.5 6.9 21.5-1.7 29.3l-43.3 39.4c-8.5 7.7-21.5 6.9-29.3-1.7s-6.9-21.5 1.7-29.3l10.3-9.4-43.3 39.4c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4c-1.1-8.3-1.7-16.8-1.7-25.4 0-51.1 23.7-96.7 60.8-126.9l-27.1-24.6c-8.5-7.7-9.8-20.8-2.8-30.1s21.5-11.2 30.1-2.8z"/>
+          </svg>
           <h2 className="text-xl sm:text-3xl md:text-5xl font-black tracking-tight leading-tight text-white uppercase whitespace-nowrap max-w-full">
             <EditableText id="recovery-program-title" defaultText="Programme - Gestion - Plastique" />
           </h2>

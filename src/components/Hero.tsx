@@ -1,13 +1,18 @@
-import { Award, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { Award, ShieldCheck, CheckCircle2, Check } from 'lucide-react';
 import { EditableText } from './EditableText';
 import { siteImages } from '../config/images';
 
 export function Hero() {
   return (
-    <section id="accueil" className="relative min-h-screen bg-linear-to-b from-zinc-50 via-zinc-100/50 to-white pt-20 pb-8 px-4 md:px-8 overflow-hidden selection:bg-emerald-900 selection:text-white flex flex-col justify-center">
+    <section id="accueil" className="relative min-h-screen bg-linear-to-b from-[#e6eefd] via-[#f1f6fe] to-[#f8faff] pt-20 pb-8 px-4 md:px-8 overflow-hidden selection:bg-emerald-100 selection:text-emerald-900 flex flex-col justify-center">
       
-      {/* Decorative Grid Patterns for Industrial Feel */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-35 z-0 pointer-events-none" />      <div className="max-w-7xl mx-auto relative z-10 space-y-8 md:space-y-10 w-full pt-4 md:pt-6">
+      {/* Visual blueprint/grid pattern acting as a professional textured veil */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,44,141,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,44,141,0.03)_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_80%,transparent_100%)] pointer-events-none" />
+      
+      {/* Visual background lines */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_100%,var(--color-emerald-100)_15%,transparent_100%)] opacity-40 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto relative z-10 space-y-8 md:space-y-10 w-full pt-4 md:pt-6">
         
         {/* Upper columns: Interactive preview & headlines copy */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -85,19 +90,28 @@ export function Hero() {
             
             {/* QUALITÉ / ÉPAISSEURS SECTION */}
             <div className="p-5 bg-white flex flex-col min-h-[140px] text-center">
-              <h5 className="text-sm font-black text-zinc-900 uppercase tracking-wider mb-4 border-b border-zinc-100 pb-2">
+              <h5 className="text-sm font-black text-blue-900 uppercase tracking-wider mb-4 border-b border-zinc-100 pb-2">
                 Qualité / Épaisseurs
               </h5>
               <div id="editable-spec-qualite-pneu" className="space-y-3 flex-1 flex flex-col justify-center items-center text-center">
-                <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight">
+                <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight flex items-center gap-2 justify-center">
+                  <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
+                    <Check className="w-3 h-3 stroke-[3]" />
+                  </div>
                   <EditableText id="pneu-qualite-eco" defaultText="Économique 1.0 MIL" />
                 </div>
                 
-                <div className="text-base md:text-lg text-zinc-900 font-extrabold leading-tight">
+                <div className="text-base md:text-lg text-zinc-900 font-extrabold leading-tight flex items-center gap-2 justify-center animate-pulse-slow">
+                  <div className="w-6 h-6 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
+                    <Check className="w-4 h-4 stroke-[3]" />
+                  </div>
                   <EditableText id="pneu-qualite-std" defaultText="Standard 1.1 MIL" />
                 </div>
                 
-                <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight">
+                <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight flex items-center gap-2 justify-center">
+                  <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
+                    <Check className="w-3 h-3 stroke-[3]" />
+                  </div>
                   <EditableText id="pneu-qualite-prem" defaultText="Premium 1.2 MIL" />
                 </div>
               </div>
@@ -105,19 +119,28 @@ export function Hero() {
 
             {/* DIMENSIONS SECTION */}
             <div className="p-5 bg-white flex flex-col min-h-[140px] text-center">
-              <h5 className="text-sm font-black text-zinc-900 uppercase tracking-wider mb-4 border-b border-zinc-100 pb-2">
+              <h5 className="text-sm font-black text-blue-900 uppercase tracking-wider mb-4 border-b border-zinc-100 pb-2">
                 Dimensions
               </h5>
               <div id="editable-spec-dimensions-pneu" className="space-y-3 flex-1 flex flex-col justify-center items-center text-center">
-                <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight session-edit-dimensions">
+                <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight session-edit-dimensions flex items-center gap-2 justify-center">
+                  <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
+                    <Check className="w-3 h-3 stroke-[3]" />
+                  </div>
                   <EditableText id="pneu-dimension-large" defaultText="Large 30¨ x 12¨ x 40¨" />
                 </div>
                 
-                <div className="text-base md:text-lg text-zinc-900 font-extrabold leading-tight">
+                <div className="text-base md:text-lg text-zinc-900 font-extrabold leading-tight flex items-center gap-2 justify-center">
+                  <div className="w-6 h-6 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
+                    <Check className="w-4 h-4 stroke-[3]" />
+                  </div>
                   <EditableText id="pneu-dimension-xl" defaultText="Extra Large 36¨ x 8¨ x 47¨" />
                 </div>
                 
-                <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight">
+                <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight flex items-center gap-2 justify-center">
+                  <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
+                    <Check className="w-3 h-3 stroke-[3]" />
+                  </div>
                   <EditableText id="pneu-dimension-allonge" defaultText="Allongé 36¨ x 12¨ x 47¨" />
                 </div>
               </div>
@@ -125,23 +148,35 @@ export function Hero() {
 
             {/* IMPRESSION SECTION */}
             <div className="p-5 bg-white flex flex-col min-h-[140px] text-center">
-              <h5 className="text-sm font-black text-zinc-900 uppercase tracking-wider mb-4 border-b border-zinc-100 pb-2">
+              <h5 className="text-sm font-black text-blue-900 uppercase tracking-wider mb-4 border-b border-zinc-100 pb-2">
                 Impression
               </h5>
               <div id="editable-spec-impression-pneu" className="space-y-3 flex-1 flex flex-col justify-center items-center text-center">
-                <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight">
+                <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight flex items-center gap-2 justify-center">
+                  <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
+                    <Check className="w-3 h-3 stroke-[3]" />
+                  </div>
                   <EditableText id="pneu-impression-2col" defaultText="2 couleurs" />
                 </div>
                 
-                <div className="text-base md:text-lg text-zinc-900 font-extrabold leading-tight">
+                <div className="text-base md:text-lg text-zinc-900 font-extrabold leading-tight flex items-center gap-2 justify-center">
+                  <div className="w-6 h-6 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
+                    <Check className="w-4 h-4 stroke-[3]" />
+                  </div>
                   <EditableText id="pneu-impression-1col" defaultText="1 couleur (noir)" />
                 </div>
                 
-                <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight">
+                <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight flex items-center gap-2 justify-center">
+                  <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
+                    <Check className="w-3 h-3 stroke-[3]" />
+                  </div>
                   <EditableText id="pneu-impression-sans-blanc" defaultText="Sans impression (blanc)" />
                 </div>
 
-                <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight">
+                <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight flex items-center gap-2 justify-center">
+                  <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
+                    <Check className="w-3 h-3 stroke-[3]" />
+                  </div>
                   <EditableText id="pneu-impression-sans-trans" defaultText="Sans impression (transparent)" />
                 </div>
               </div>

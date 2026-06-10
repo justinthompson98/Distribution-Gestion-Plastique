@@ -18,7 +18,7 @@ export default function App() {
 
   return (
     <EditableProvider>
-      <div className="min-h-screen bg-white font-sans antialiased text-zinc-900 scroll-smooth">
+      <div className="min-h-screen bg-[#f8faff] font-sans antialiased text-zinc-900 scroll-smooth">
         {/* 27 years industry, professional-industrial-ecological styling */}
         <Navbar />
         

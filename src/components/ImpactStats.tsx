@@ -4,7 +4,7 @@ import { Calculator, Recycle, ArrowRight, Wind } from 'lucide-react';
 import { siteImages } from '../config/images';
 
 export function ImpactStats() {
-  const [rollsInput, setRollsInput] = useState<string>("50");
+  const [rollsInput, setRollsInput] = useState<string>("20");
 
   const imgPlasticsLoop = siteImages.statPlasticsLoop;
   const imgBagsRecycled = siteImages.statBagsRecycled;
@@ -52,9 +52,13 @@ export function ImpactStats() {
   const computedCO2 = Math.round(computedLbs * (794 / 700));
 
   return (
-    <section className="py-12 md:py-16 px-4 md:px-8 bg-white border-t border-zinc-200/65 relative overflow-hidden">
-      {/* Grid subtle background pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
+    <section className="py-24 px-4 md:px-8 bg-linear-to-b from-[#e6eefd] via-[#f1f6fe] to-[#f8faff] border-t border-zinc-200 text-zinc-900 relative overflow-hidden selection:bg-emerald-100 selection:text-emerald-900">
+      
+      {/* Visual blueprint/grid pattern acting as a professional textured veil */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,44,141,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,44,141,0.03)_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_80%,transparent_100%)] pointer-events-none" />
+      
+      {/* Visual background lines */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_100%,var(--color-emerald-100)_15%,transparent_100%)] opacity-40 pointer-events-none" />
 
       <div className="max-w-5xl mx-auto relative z-10">
         
@@ -161,7 +165,7 @@ export function ImpactStats() {
                     pattern="[0-9]*"
                     value={rollsInput}
                     onChange={(e) => handleRollsChange(e.target.value)}
-                    placeholder="Nombre de rouleaux (ex: 50)"
+                    placeholder="Nombre de rouleaux (ex: 20)"
                     className="w-full text-center bg-transparent border-0 text-zinc-900 font-extrabold text-xl placeholder-zinc-400 focus:outline-hidden py-1.5 focus:ring-0"
                   />
                 </div>
