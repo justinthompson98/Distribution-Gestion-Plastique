@@ -15,19 +15,19 @@ import partenaire10 from '../assets/images/partenaires/partenaire_10.png';
 import partenaire11 from '../assets/images/partenaires/partenaire_11.png';
 import partenaire12 from '../assets/images/partenaires/partenaire_12.png';
 
-const PARTNER_LOGOS = [
-  partenaire1,
-  partenaire2,
-  partenaire3,
-  partenaire4,
-  partenaire5,
-  partenaire6,
-  partenaire7,
-  partenaire8,
-  partenaire9,
-  partenaire10,
-  partenaire11,
-  partenaire12,
+const PARTNERS_DATA = [
+  { logo: partenaire1, url: 'https://pneusandreouellet.com/' }, // Remplacez '#' par l'URL du site (ex: 'https://site-client1.com')
+  { logo: partenaire2, url: 'https://www.gmpaille.com/fr' }, // Remplacez '#' par l'URL du site (ex: 'https://site-client2.com')
+  { logo: partenaire3, url: 'https://pieceseconomiques.com/a-propos/' }, // Remplacez '#' par l'URL du site
+  { logo: partenaire4, url: 'https://groupesaillant.com/' }, // Remplacez '#' par l'URL du site
+  { logo: partenaire5, url: 'https://www.kiaquebec.com/' }, // Remplacez '#' par l'URL du site
+  { logo: partenaire6, url: 'https://www.laplantegroupeauto.com/' }, // Remplacez '#' par l'URL du site
+  { logo: partenaire7, url: 'https://desharnais.ca/services/mecanique/' }, // Remplacez '#' par l'URL du site
+  { logo: partenaire8, url: 'https://www.theetgechevrolet.com/' }, // Remplacez '#' par l'URL du site
+  { logo: partenaire9, url: 'https://www.lamijunior.com/' }, // Remplacez '#' par l'URL du site
+  { logo: partenaire10, url: 'https://carrefour40640toyota.ca/' }, // Remplacez '#' par l'URL du site
+  { logo: partenaire11, url: 'https://www.carrefourvw.com/' }, // Remplacez '#' par l'URL du site
+  { logo: partenaire12, url: 'https://www.pagesjaunes.ca/bus/Quebec/Quebec/Garage-Julien-Bedard-Inc/2283219.html' }, // Remplacez '#' par l'URL du site
 ];
 
 export function Partners() {
@@ -51,24 +51,48 @@ export function Partners() {
 
         {/* 12-Logo Minimal Grid Pattern */}
         <div className="grid grid-cols-2 sm:grid-cols-4 max-w-5xl mx-auto gap-6">
-          {PARTNER_LOGOS.map((logo, index) => (
-            <div
-              key={index}
-              className="group relative aspect-[3/2] rounded-2xl border flex items-center justify-center overflow-hidden transition-all duration-300 bg-white border-zinc-250/70"
-            >
-              {/* Logo wrapper */}
-              <div className="w-full h-full p-4.5 flex items-center justify-center relative bg-white">
-                {logo ? (
-                  <img
-                    src={logo}
-                    alt={`Logo partenaire ${index + 1}`}
-                    referrerPolicy="no-referrer"
-                    className="max-w-full max-h-full object-contain filter hover:scale-103 transition-transform duration-300 select-none pointer-events-none"
-                  />
-                ) : null}
-              </div>
-            </div>
-          ))}
+          {PARTNERS_DATA.map((partner, index) => {
+            const hasLink = partner.url && partner.url !== '#';
+            return (
+              <a
+                key={index}
+                href={partner.url}
+                target={hasLink ? "_blank" : undefined}
+                rel={hasLink ? "noopener noreferrer" : "noreferrer"}
+                className={`group relative aspect-[3/2] rounded-2xl border flex items-center justify-center overflow-hidden transition-all duration-300 bg-white border-zinc-250/70 ${
+                  hasLink 
+                    ? 'hover:border-sky-400 hover:shadow-lg hover:shadow-sky-500/5 cursor-pointer transform hover:-translate-y-1' 
+                    : 'cursor-default'
+                }`}
+                onClick={(e) => {
+                  if (!hasLink) {
+                    e.preventDefault();
+                  }
+                }}
+              >
+                {/* Logo wrapper */}
+                <div className="w-full h-full p-4.5 flex items-center justify-center relative bg-white">
+                  {partner.logo ? (
+                    <img
+                      src={partner.logo}
+                      alt={`Logo partenaire ${index + 1}`}
+                      referrerPolicy="no-referrer"
+                      className="max-w-full max-h-full object-contain filter group-hover:scale-105 transition-transform duration-300 select-none pointer-events-none"
+                    />
+                  ) : null}
+                  
+                  {/* Subtle link overlay indicator on hover if link exists */}
+                  {hasLink && (
+                    <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                      <svg className="w-4 h-4 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </div>
+                  )}
+                </div>
+              </a>
+            );
+          })}
         </div>
 
       </div>
