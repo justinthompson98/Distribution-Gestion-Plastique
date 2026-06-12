@@ -14,7 +14,7 @@ import stat2SacsDetournes from '../assets/images/impact_stats/stat2_sacs_detourn
 import stat3PoidsRecycle from '../assets/images/impact_stats/stat3_poids_recycle.png';
 
 // Importations depuis les répertoires dédiés éditables (via Drag and Drop de l'utilisateur)
-import etape3_1 from '../assets/images/programme_etape3/etape1.png';
+import etape3_1 from '../assets/images/programme_etape3/etape1.jpg';
 import etape3_2 from '../assets/images/programme_etape3/etape2.png';
 import etape3_3 from '../assets/images/programme_etape3/etape3.jpg';
 import etape3_4 from '../assets/images/programme_etape3/etape4.png';
