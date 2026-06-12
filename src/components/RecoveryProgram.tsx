@@ -34,33 +34,42 @@ export function RecoveryProgram() {
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-4xl mx-auto mb-16 flex flex-col items-center justify-center">
-          <img 
-            src="/logo-programme.png" 
-            alt="Logo Programme" 
-            className="max-h-24 max-w-[240px] mb-6 object-contain"
-            onError={(e) => {
-              e.currentTarget.style.display = 'none';
-              const sibling = e.currentTarget.nextSibling as HTMLElement;
-              if (sibling) {
-                sibling.style.display = 'block';
-              }
-            }}
-          />
-          <svg 
-            viewBox="0 0 512 512" 
-            className="w-16 h-16 text-[#7ca8d2] mb-6 flex-shrink-0"
-            fill="currentColor"
-            style={{ display: 'none' }}
-          >
-            <path d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4 0 51.1-23.7 96.7-60.8 126.9l27.1 24.6c8.5 7.7 9.8 20.8 2.8 30.1s-21.5 11.2-30.1 2.8l-72-65.5c-4.8-4.4-7.6-10.7-7.6-17.3s2.8-12.9 7.6-17.3l72-65.5c8.5-7.7 21.5-6.9 29.3 1.7 7.7 8.5 6.9 21.5-1.7 29.3l-20.9 19c25.4-21.6 41.5-53.7 41.5-89.6 0-9.8-1.2-19.3-3.5-28.4l-31.9 29.1c-8.5 7.7-21.5 6.9-29.3-1.7-7.7-8.5-6.9-21.5 1.7-29.3l43.3-39.4c8.5-7.7 21.5-6.9 29.3 1.7s6.9 21.5-1.7 29.3l-10.3 9.4 43.3-39.4c6.9-6.3 16.6-8.2 25.3-5zm-239.9 201.4c-8.7-3.2-18.4-.5-24.6 6.4l-39.4 43.3c-8.3-1.1-16.8-1.7-25.4-1.7-51.1 0-96.7 23.7-126.9 60.8l-24.6-27.1c-7.7-8.5-20.8-9.8-30.1-2.8s-11.2 21.5-2.8 30.1l65.5 72c4.4 4.8 10.7 7.6 17.3 7.6s12.9-2.8 17.3-7.6l65.5-72c7.7-8.5 6.9-21.5-1.7-29.3-8.5-7.7-21.5-6.9-29.3 1.7l-19 20.9c21.6-25.4 53.7-41.5 89.6-41.5 9.8 0 19.3 1.2 28.4 3.5l-29.1 31.9c-7.7 8.5-6.9 21.5 1.7 29.3 8.5 7.7 21.5 6.9 29.3-1.7l39.4-43.3c7.7-8.5 6.9-21.5-1.7-29.3s-21.5-6.9-29.3 1.7l-9.4 10.3 39.4-43.3c6.3-6.9 8.2-16.6 5-25.3zm-65.5-231.1l72 65.5c4.8 4.4 7.6 10.7 7.6 17.3s-2.8 12.9-7.6 17.3l-72 65.5c-8.5 7.7-21.5 6.9-29.3-1.7-7.7-8.5-6.9-21.5 1.7-29.3l20.9-19c-25.4 21.6-41.5 53.7-41.5 89.6 0 9.8 1.2 19.3 3.5 28.4l31.9-29.1c8.5-7.7 21.5-6.9 29.3 1.7 7.7 8.5 6.9 21.5-1.7 29.3l-43.3 39.4c-8.5 7.7-21.5 6.9-29.3-1.7s-6.9-21.5 1.7-29.3l10.3-9.4-43.3 39.4c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4c-1.1-8.3-1.7-16.8-1.7-25.4 0-51.1 23.7-96.7 60.8-126.9l-27.1-24.6c-8.5-7.7-9.8-20.8-2.8-30.1s21.5-11.2 30.1-2.8z"/>
-          </svg>
-          <h2 className="text-xl sm:text-3xl md:text-5xl font-black tracking-tight leading-tight text-white uppercase whitespace-nowrap max-w-full">
-            <EditableText id="recovery-program-title" defaultText="Programme - Gestion - Plastique" />
-          </h2>
+        <div className="max-w-5xl mx-auto mb-12 flex flex-col items-center justify-center">
+          {/* Logo on top with no background/circle */}
+          <div className="mb-6 flex justify-center">
+            <div className="shrink-0 relative flex items-center justify-center h-32 w-32 md:h-40 md:w-40 rounded-full overflow-hidden">
+              <img 
+                src="/logo-gp.png" 
+                alt="Distribution GP Logo" 
+                className="w-full h-full object-cover rounded-full relative z-10"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  const fallbackContainer = e.currentTarget.nextSibling as HTMLElement;
+                  if (fallbackContainer) {
+                    fallbackContainer.style.display = 'block';
+                  }
+                }}
+              />
+              <div style={{ display: 'none' }} className="relative z-10">
+                <GPLogo size={100} accentColor="white" bgCircleColor="transparent" className="h-auto" />
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center justify-center w-full">
+            {/* Title Container: DISTRIBUTION GESTION PLASTIQUE on a single line with slightly decreased font sizes, without a hyphen */}
+            <div className="flex flex-row flex-wrap items-center justify-center gap-x-4 sm:gap-x-5 text-center">
+              <h1 className="text-xl sm:text-3xl md:text-4xl font-black tracking-tight leading-none text-white uppercase">
+                <EditableText id="recovery-program-title-distribution" defaultText="Distribution" />
+              </h1>
+              <h1 className="text-xl sm:text-3xl md:text-4xl font-black tracking-tight leading-none text-white uppercase [word-spacing:0.25em]">
+                <EditableText id="recovery-program-title-gestion-plastique" defaultText="Gestion Plastique" />
+              </h1>
+            </div>
+          </div>
 
           {/* Horizontal line spanning the whole title area */}
-          <div className="w-full h-px bg-emerald-500/35 mt-6 mb-6" />
+          <div className="w-full h-px bg-emerald-500/35 mt-8 mb-6" />
 
           {/* Divided container for Left & Right text */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-0 w-full relative">
@@ -77,10 +86,39 @@ export function RecoveryProgram() {
             {/* Right side */}
             <div className="flex items-center justify-center text-center px-4 py-2 border-t border-emerald-800/40 md:border-t-0">
               <span className="text-sm sm:text-lg md:text-xl font-bold tracking-wider text-emerald-300 uppercase leading-snug">
-                <EditableText id="recovery-right-subtitle-multiline" defaultText="Gestion des<br />déchets plastique" isHtml={true} />
+                <EditableText id="recovery-right-subtitle-multiline" defaultText="Gestion des<br />déchets plastiques" isHtml={true} />
               </span>
             </div>
           </div>
+        </div>
+
+        {/* Programme de Récupération Subheader - with logo on the left of title */}
+        <div className="max-w-4xl mx-auto mb-12 mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-5">
+          <div className="shrink-0 flex items-center justify-center">
+            <img 
+              src="/logo-programme.png" 
+              alt="Logo Programme" 
+              className="max-h-16 max-w-[160px] object-contain"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+                const sibling = e.currentTarget.nextSibling as HTMLElement;
+                if (sibling) {
+                  sibling.style.display = 'block';
+                }
+              }}
+            />
+            <svg 
+              viewBox="0 0 512 512" 
+              className="w-12 h-12 text-[#7ca8d2] flex-shrink-0"
+              fill="currentColor"
+              style={{ display: 'none' }}
+            >
+              <path d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4 0 51.1-23.7 96.7-60.8 126.9l27.1 24.6c8.5 7.7 9.8 20.8 2.8 30.1s-21.5 11.2-30.1 2.8l-72-65.5c-4.8-4.4-7.6-10.7-7.6-17.3s2.8-12.9 7.6-17.3l72-65.5c8.5-7.7 21.5-6.9 29.3 1.7 7.7 8.5 6.9 21.5-1.7 29.3l-20.9 19c25.4-21.6 41.5-53.7 41.5-89.6 0-9.8-1.2-19.3-3.5-28.4l-31.9 29.1c-8.5 7.7-21.5 6.9-29.3-1.7-7.7-8.5-6.9-21.5 1.7-29.3l43.3-39.4c8.5-7.7 21.5-6.9 29.3 1.7s6.9 21.5-1.7 29.3l-10.3 9.4 43.3-39.4c6.9-6.3 16.6-8.2 25.3-5zm-239.9 201.4c-8.7-3.2-18.4-.5-24.6 6.4l-39.4 43.3c-8.3-1.1-16.8-1.7-25.4-1.7-51.1 0-96.7 23.7-126.9 60.8l-24.6-27.1c-7.7-8.5-20.8-9.8-30.1-2.8s-11.2 21.5-2.8 30.1l65.5 72c4.4 4.8 10.7 7.6 17.3 7.6s12.9-2.8 17.3-7.6l65.5-72c7.7-8.5 6.9-21.5-1.7-29.3-8.5-7.7-21.5-6.9-29.3 1.7l-19 20.9c21.6-25.4 53.7-41.5 89.6-41.5 9.8 0 19.3 1.2 28.4 3.5l-29.1 31.9c-7.7 8.5-6.9 21.5 1.7 29.3 8.5 7.7 21.5 6.9 29.3-1.7l39.4-43.3c7.7-8.5 6.9-21.5-1.7-29.3s-21.5-6.9-29.3 1.7l-9.4 10.3 39.4-43.3c6.3-6.9 8.2-16.6 5-25.3zm-65.5-231.1l72 65.5c4.8 4.4 7.6 10.7 7.6 17.3s-2.8 12.9-7.6 17.3l-72 65.5c-8.5 7.7-21.5 6.9-29.3-1.7-7.7-8.5-6.9-21.5 1.7-29.3l20.9-19c-25.4 21.6-41.5 53.7-41.5 89.6 0 9.8 1.2 19.3 3.5 28.4l31.9-29.1c8.5-7.7 21.5-6.9 29.3 1.7 7.7 8.5 6.9 21.5-1.7 29.3l-43.3 39.4c-8.5 7.7-21.5 6.9-29.3-1.7s-6.9-21.5 1.7-29.3l10.3-9.4-43.3 39.4c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4c-1.1-8.3-1.7-16.8-1.7-25.4 0-51.1 23.7-96.7 60.8-126.9l-27.1-24.6c-8.5-7.7-9.8-20.8-2.8-30.1s21.5-11.2 30.1-2.8z" />
+            </svg>
+          </div>
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-black tracking-wider text-emerald-300 uppercase">
+            <EditableText id="recovery-program-sub-title" defaultText="PROGRAMME DE RÉCUPÉRATION" />
+          </h3>
         </div>
 
         {/* Process Roadmap divided into groups of 2 */}
@@ -120,7 +158,7 @@ export function RecoveryProgram() {
                     <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/30 to-transparent pointer-events-none" />
                   </div>
 
-                  <p className="text-emerald-100/90 text-sm leading-relaxed font-light">
+                  <p className="text-emerald-100/95 text-base md:text-lg leading-relaxed font-medium">
                     <EditableText id="rec-step-desc-01" defaultText="Vos rouleaux de sacs à pneu sont livrés directement à votre garage juste avant les périodes critiques de l'année au printemps et à l'automne." as="span" />
                   </p>
                 </div>
@@ -155,11 +193,11 @@ export function RecoveryProgram() {
                     <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/30 to-transparent pointer-events-none" />
                   </div>
 
-                  <div className="text-emerald-100/90 text-sm leading-relaxed font-light">
+                  <div className="text-emerald-100/95 text-base md:text-lg leading-relaxed font-medium">
                     <p>
                       Vous récupérez les sacs à pneu usés de vos clients à l'aide de notre support sac conçu à cet effet. À la fin de chaque saison de pneu, nos équipes s'occuperont de faire le ramassage.
                     </p>
-                    <p className="mt-4 text-xs text-emerald-300/85 font-medium flex items-start gap-1.5">
+                    <p className="mt-4 text-xs md:text-sm text-emerald-300/85 font-medium flex items-start gap-1.5">
                       <span className="text-sky-400 font-black shrink-0">**</span>
                       <span>La fréquence peut varier selon le volume récupéré</span>
                     </p>
@@ -195,7 +233,7 @@ export function RecoveryProgram() {
                   </div>
 
                   <div className="mb-6 max-w-4xl text-left">
-                    <p className="text-emerald-100/90 text-sm leading-relaxed font-light">
+                    <p className="text-emerald-100/95 text-base md:text-lg leading-relaxed font-medium">
                       <EditableText id="rec-step-desc-03" defaultText="Les sacs de plastique usés sont acheminés à notre usine pour être fondus. La matière brute est ensuite récupéré afin de produire de nouveaux sacs d'aussi bonne qualité pour la saison suivante." as="span" />
                     </p>
                   </div>
@@ -249,7 +287,7 @@ export function RecoveryProgram() {
                       </h3>
                     </div>
 
-                    <p className="text-emerald-100/90 text-sm leading-relaxed font-light">
+                    <p className="text-emerald-100/95 text-base md:text-lg leading-relaxed font-medium">
                       <EditableText id="rec-step-desc-04" defaultText="Lorsque nous récupérons vos sacs usés, ceux-ci sont pesées afin de vous transmettre un rapport détaillé de votre contribution de récupération. Vous pouvez ainsi mettre de l'avant votre impact environnemental auprès de votre clientèle!" as="span" />
                     </p>
                   </div>

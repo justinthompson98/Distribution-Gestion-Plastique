@@ -55,8 +55,6 @@ export function AboutUs() {
           {/* Graphical representation / Badge Column */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative bg-white border border-zinc-200 rounded-3xl p-8 md:p-10 w-full max-w-md shadow-xl overflow-hidden group hover:border-emerald-450/40 transition-all duration-300">
-              {/* Highlight flare */}
-              <div className="absolute right-0 top-0 w-32 h-32 bg-emerald-500/10 rounded-full filter blur-xl pointer-events-none" />
  
               <div className="flex flex-col gap-6 relative z-10 text-left">
                 <div className="flex items-center gap-4">

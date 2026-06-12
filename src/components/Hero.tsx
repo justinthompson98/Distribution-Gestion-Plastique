@@ -43,7 +43,7 @@ export function Hero() {
                     <EditableText id="hero-commitment-title" defaultText="Votre confiance, notre engagement" />
                   </p>
                   <p className="text-zinc-800 text-xs sm:text-sm font-black leading-tight">
-                    <EditableText id="hero-commitment-text" defaultText="Distribution Gestion Plastique  —  Depuis 30 ans !" />
+                    <EditableText id="hero-commitment-text" defaultText="Distribution GP  —  Depuis 30 ans !" />
                   </p>
                 </div>
               </div>
@@ -55,7 +55,7 @@ export function Hero() {
             
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-5xl font-black text-zinc-950 tracking-tight leading-[1.1] mb-4">
               <EditableText id="hero-title-main" defaultText="Les sacs à pneu personnalisés" /> <br />
-              <span className="text-emerald-600 italic">
+              <span className="text-emerald-600">
                 <EditableText id="hero-title-highlight" defaultText="les moins chers" />
               </span>{" "}
               <EditableText id="hero-title-end" defaultText="sur le marché." />
@@ -89,95 +89,107 @@ export function Hero() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-zinc-200/80 rounded-2xl overflow-hidden shadow-xs divide-y md:divide-y-0 md:divide-x divide-zinc-200">
             
             {/* QUALITÉ / ÉPAISSEURS SECTION */}
-            <div className="p-5 bg-white flex flex-col min-h-[140px] text-center">
-              <h5 className="text-sm font-black text-blue-900 uppercase tracking-wider mb-4 border-b border-zinc-100 pb-2">
-                Qualité / Épaisseurs
-              </h5>
-              <div id="editable-spec-qualite-pneu" className="space-y-3 flex-1 flex flex-col justify-center items-center text-center">
-                <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight flex items-center gap-2 justify-center">
-                  <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
-                    <Check className="w-3 h-3 stroke-[3]" />
+            <div className="bg-white flex flex-col min-h-[140px] text-center">
+              <div className="bg-blue-900 py-3.5 px-4 border-b border-blue-950/20 shadow-xs">
+                <h5 className="text-sm font-black text-white uppercase tracking-wider">
+                  Qualité / Épaisseurs
+                </h5>
+              </div>
+              <div id="editable-spec-qualite-pneu" className="p-5 flex-1 flex flex-col justify-center items-center">
+                <div className="w-fit mx-auto flex flex-col items-start justify-start space-y-3">
+                  <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight flex items-center gap-3 justify-start text-left">
+                    <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
+                      <Check className="w-3 h-3 stroke-[3]" />
+                    </div>
+                    <EditableText id="pneu-qualite-eco" defaultText="Économique 1.0 MIL" />
                   </div>
-                  <EditableText id="pneu-qualite-eco" defaultText="Économique 1.0 MIL" />
-                </div>
-                
-                <div className="text-base md:text-lg text-zinc-900 font-extrabold leading-tight flex items-center gap-2 justify-center animate-pulse-slow">
-                  <div className="w-6 h-6 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
-                    <Check className="w-4 h-4 stroke-[3]" />
+                  
+                  <div className="text-base md:text-lg text-zinc-900 font-extrabold leading-tight flex items-center gap-3 justify-start text-left">
+                    <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
+                      <Check className="w-3 h-3 md:w-4 md:h-4 stroke-[3]" />
+                    </div>
+                    <EditableText id="pneu-qualite-std" defaultText="Standard 1.1 MIL" />
                   </div>
-                  <EditableText id="pneu-qualite-std" defaultText="Standard 1.1 MIL" />
-                </div>
-                
-                <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight flex items-center gap-2 justify-center">
-                  <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
-                    <Check className="w-3 h-3 stroke-[3]" />
+                  
+                  <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight flex items-center gap-3 justify-start text-left">
+                    <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
+                      <Check className="w-3 h-3 stroke-[3]" />
+                    </div>
+                    <EditableText id="pneu-qualite-prem" defaultText="Premium 1.2 MIL" />
                   </div>
-                  <EditableText id="pneu-qualite-prem" defaultText="Premium 1.2 MIL" />
                 </div>
               </div>
             </div>
 
             {/* DIMENSIONS SECTION */}
-            <div className="p-5 bg-white flex flex-col min-h-[140px] text-center">
-              <h5 className="text-sm font-black text-blue-900 uppercase tracking-wider mb-4 border-b border-zinc-100 pb-2">
-                Dimensions
-              </h5>
-              <div id="editable-spec-dimensions-pneu" className="space-y-3 flex-1 flex flex-col justify-center items-center text-center">
-                <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight session-edit-dimensions flex items-center gap-2 justify-center">
-                  <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
-                    <Check className="w-3 h-3 stroke-[3]" />
+            <div className="bg-white flex flex-col min-h-[140px] text-center">
+              <div className="bg-blue-900 py-3.5 px-4 border-b border-blue-950/20 shadow-xs">
+                <h5 className="text-sm font-black text-white uppercase tracking-wider">
+                  Dimensions
+                </h5>
+              </div>
+              <div id="editable-spec-dimensions-pneu" className="p-5 flex-1 flex flex-col justify-center items-center">
+                <div className="w-fit mx-auto flex flex-col items-start justify-start space-y-3">
+                  <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight session-edit-dimensions flex items-center gap-3 justify-start text-left">
+                    <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
+                      <Check className="w-3 h-3 stroke-[3]" />
+                    </div>
+                    <EditableText id="pneu-dimension-large" defaultText='Large 30" x 12" x 40"' />
                   </div>
-                  <EditableText id="pneu-dimension-large" defaultText="Large 30¨ x 12¨ x 40¨" />
-                </div>
-                
-                <div className="text-base md:text-lg text-zinc-900 font-extrabold leading-tight flex items-center gap-2 justify-center">
-                  <div className="w-6 h-6 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
-                    <Check className="w-4 h-4 stroke-[3]" />
+                  
+                  <div className="text-base md:text-lg text-zinc-900 font-extrabold leading-tight flex items-center gap-3 justify-start text-left">
+                    <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
+                      <Check className="w-3 h-3 md:w-4 md:h-4 stroke-[3]" />
+                    </div>
+                    <EditableText id="pneu-dimension-xl" defaultText='Extra Large 36" x 8" x 47"' />
                   </div>
-                  <EditableText id="pneu-dimension-xl" defaultText="Extra Large 36¨ x 8¨ x 47¨" />
-                </div>
-                
-                <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight flex items-center gap-2 justify-center">
-                  <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
-                    <Check className="w-3 h-3 stroke-[3]" />
+                  
+                  <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight flex items-center gap-3 justify-start text-left">
+                    <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
+                      <Check className="w-3 h-3 stroke-[3]" />
+                    </div>
+                    <EditableText id="pneu-dimension-allonge" defaultText='Allongé 36" x 12" x 47"' />
                   </div>
-                  <EditableText id="pneu-dimension-allonge" defaultText="Allongé 36¨ x 12¨ x 47¨" />
                 </div>
               </div>
             </div>
 
             {/* IMPRESSION SECTION */}
-            <div className="p-5 bg-white flex flex-col min-h-[140px] text-center">
-              <h5 className="text-sm font-black text-blue-900 uppercase tracking-wider mb-4 border-b border-zinc-100 pb-2">
-                Impression
-              </h5>
-              <div id="editable-spec-impression-pneu" className="space-y-3 flex-1 flex flex-col justify-center items-center text-center">
-                <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight flex items-center gap-2 justify-center">
-                  <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
-                    <Check className="w-3 h-3 stroke-[3]" />
+            <div className="bg-white flex flex-col min-h-[140px] text-center">
+              <div className="bg-blue-900 py-3.5 px-4 border-b border-blue-950/20 shadow-xs">
+                <h5 className="text-sm font-black text-white uppercase tracking-wider">
+                  Impression
+                </h5>
+              </div>
+              <div id="editable-spec-impression-pneu" className="p-5 flex-1 flex flex-col justify-center items-center">
+                <div className="w-fit mx-auto flex flex-col items-start justify-start space-y-3">
+                  <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight flex items-center gap-3 justify-start text-left">
+                    <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
+                      <Check className="w-3 h-3 stroke-[3]" />
+                    </div>
+                    <EditableText id="pneu-impression-2col" defaultText="2 couleurs" />
                   </div>
-                  <EditableText id="pneu-impression-2col" defaultText="2 couleurs" />
-                </div>
-                
-                <div className="text-base md:text-lg text-zinc-900 font-extrabold leading-tight flex items-center gap-2 justify-center">
-                  <div className="w-6 h-6 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
-                    <Check className="w-4 h-4 stroke-[3]" />
+                  
+                  <div className="text-base md:text-lg text-zinc-900 font-extrabold leading-tight flex items-center gap-3 justify-start text-left">
+                    <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
+                      <Check className="w-3 h-3 md:w-4 md:h-4 stroke-[3]" />
+                    </div>
+                    <EditableText id="pneu-impression-1col" defaultText="1 couleur / noir" />
                   </div>
-                  <EditableText id="pneu-impression-1col" defaultText="1 couleur (noir)" />
-                </div>
-                
-                <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight flex items-center gap-2 justify-center">
-                  <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
-                    <Check className="w-3 h-3 stroke-[3]" />
+                  
+                  <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight flex items-center gap-3 justify-start text-left">
+                    <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
+                      <Check className="w-3 h-3 stroke-[3]" />
+                    </div>
+                    <EditableText id="pneu-impression-sans-blanc" defaultText="Sans impression (blanc)" />
                   </div>
-                  <EditableText id="pneu-impression-sans-blanc" defaultText="Sans impression (blanc)" />
-                </div>
 
-                <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight flex items-center gap-2 justify-center">
-                  <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
-                    <Check className="w-3 h-3 stroke-[3]" />
+                  <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight flex items-center gap-3 justify-start text-left">
+                    <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
+                      <Check className="w-3 h-3 stroke-[3]" />
+                    </div>
+                    <EditableText id="pneu-impression-sans-trans" defaultText="Sans impression (transparent)" />
                   </div>
-                  <EditableText id="pneu-impression-sans-trans" defaultText="Sans impression (transparent)" />
                 </div>
               </div>
             </div>

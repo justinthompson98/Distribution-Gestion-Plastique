@@ -8,6 +8,7 @@ import { AboutUs } from './components/AboutUs';
 import { Partners } from './components/Partners';
 import { ContactForm } from './components/ContactForm';
 import { EditableProvider } from './components/EditableText';
+import { GoogleAnalytics } from './components/GoogleAnalytics';
 
 export default function App() {
   const [selectedProduct, setSelectedProduct] = useState<string>('');
@@ -18,6 +19,7 @@ export default function App() {
 
   return (
     <EditableProvider>
+      <GoogleAnalytics />
       <div className="min-h-screen bg-[#f8faff] font-sans antialiased text-zinc-900 scroll-smooth">
         {/* 27 years industry, professional-industrial-ecological styling */}
         <Navbar />

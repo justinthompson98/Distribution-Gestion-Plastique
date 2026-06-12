@@ -8,6 +8,7 @@ interface GPLogoProps {
 }
 
 export function GPLogo({ className = '', size = 120, accentColor = 'currentColor', bgCircleColor = 'white' }: GPLogoProps) {
+  const finalColor = accentColor === 'currentColor' ? 'currentColor' : accentColor;
   return (
     <svg
       width={size}
@@ -19,49 +20,55 @@ export function GPLogo({ className = '', size = 120, accentColor = 'currentColor
       aria-label="Distribution GP Logo"
     >
       <defs>
-        {/* Top arc clockwise for "DISTRIBUTION" */}
+        {/* Top Text Arc at Radius 79.5 (perfectly centered between 68 and 91) */}
         <path
           id="top-arc-path"
-          d="M 30,100 A 70,70 0 0,1 170,100"
+          d="M 20.5,100 A 79.5,79.5 0 0,1 179.5,100"
           fill="none"
         />
-        {/* Bottom arc counter-clockwise for "DEPUIS 1996" (so letters point inward towards center) */}
+        {/* Bottom Text Arc at Radius 79.5 (counter-clockwise so letters stand upright pointing inwards) */}
         <path
           id="bottom-arc-path"
-          d="M 30,100 A 70,70 0 0,0 170,100"
+          d="M 20.5,100 A 79.5,79.5 0 0,0 179.5,100"
           fill="none"
         />
       </defs>
 
       {/* Background container circle to match uploaded image logo styled look */}
       {bgCircleColor !== 'none' && bgCircleColor !== 'transparent' && (
-        <circle cx="100" cy="100" r="96" fill={bgCircleColor} className="stroke-zinc-100" strokeWidth="1" />
+        <circle cx="100" cy="100" r="96" fill={bgCircleColor} className="stroke-zinc-100/10" strokeWidth="1" />
       )}
 
-      {/* Double Circle Borders */}
+      {/* Outer Solid Thick Circle */}
       <circle
         cx="100"
         cy="100"
         r="91"
-        stroke={accentColor === 'currentColor' ? 'currentColor' : accentColor}
-        strokeWidth="3"
+        stroke={finalColor}
+        strokeWidth="3.2"
         fill="none"
       />
       
-      {/* Inner thin circle (drawn partially or fully, in original image it has soft margin gaps or full circular thin stroke) */}
-      <circle
-        cx="100"
-        cy="100"
-        r="75"
-        stroke={accentColor === 'currentColor' ? 'currentColor' : accentColor}
+      {/* Inner Broken Circle (Top Arc): Radius 68, from angle 215° to 325° (clockwise) */}
+      <path
+        d="M 44.3,61.0 A 68,68 0 0,1 155.7,61.0"
+        stroke={finalColor}
+        strokeWidth="1.5"
+        fill="none"
+      />
+
+      {/* Inner Broken Circle (Bottom Arc): Radius 68, from angle 145° to 35° (counter-clockwise) */}
+      <path
+        d="M 44.3,139.0 A 68,68 0 0,0 155.7,139.0"
+        stroke={finalColor}
         strokeWidth="1.5"
         fill="none"
       />
 
       {/* Top Text "DISTRIBUTION" */}
       <text
-        fill={accentColor === 'currentColor' ? 'currentColor' : accentColor}
-        fontSize="17"
+        fill={finalColor}
+        fontSize="15"
         fontWeight="800"
         letterSpacing="8"
         textAnchor="middle"
@@ -75,8 +82,8 @@ export function GPLogo({ className = '', size = 120, accentColor = 'currentColor
 
       {/* Bottom Text "DEPUIS 1996" */}
       <text
-        fill={accentColor === 'currentColor' ? 'currentColor' : accentColor}
-        fontSize="15.5"
+        fill={finalColor}
+        fontSize="13.5"
         fontWeight="700"
         letterSpacing="6.5"
         textAnchor="middle"
@@ -90,13 +97,13 @@ export function GPLogo({ className = '', size = 120, accentColor = 'currentColor
       {/* Central Huge Monogram "GP" */}
       <text
         x="100"
-        y="122"
-        fill={accentColor === 'currentColor' ? 'currentColor' : accentColor}
+        y="124"
+        fill={finalColor}
         fontSize="76"
         fontWeight="300"
         letterSpacing="-1"
         textAnchor="middle"
-        style={{ fontFamily: '"Inter", system-ui, -apple-system, sans-serif' }}
+        style={{ fontFamily: '"Inter", "Helvetica Neue", system-ui, sans-serif' }}
       >
         GP
       </text>

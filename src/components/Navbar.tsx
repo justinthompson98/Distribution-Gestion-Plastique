@@ -16,11 +16,11 @@ export function Navbar() {
               <div className="transition-all duration-300 group-hover:scale-105 select-none my-0.5 flex-shrink-0">
                 <SmartLogo size={56} className="text-zinc-900" accentColor="currentColor" />
               </div>
-              <div className="flex flex-col justify-center">
+              <div className="flex flex-col justify-center items-center text-center">
                 <span className="font-sans font-extrabold text-[15px] sm:text-[17px] text-zinc-900 tracking-tight leading-none uppercase group-hover:text-emerald-600 transition-colors">
                   DISTRIBUTION
                 </span>
-                <span className="font-sans font-black text-[10px] sm:text-[11.5px] text-emerald-600 tracking-widest leading-none uppercase mt-1.5">
+                <span className="font-sans font-black text-[15px] sm:text-[17px] text-emerald-600 tracking-tight leading-none uppercase mt-1">
                   GESTION PLASTIQUE
                 </span>
               </div>

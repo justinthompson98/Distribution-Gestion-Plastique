@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Phone, Mail, CheckCircle2, Award, Clock, ShieldCheck, Factory } from 'lucide-react';
 import { EditableText } from './EditableText';
+import { trackGAEvent } from './GoogleAnalytics';
 
 interface ContactFormProps {
   selectedBagType: string;
@@ -20,7 +21,7 @@ export function ContactForm({ selectedBagType }: ContactFormProps) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <section id="contact" className="py-24 px-4 md:px-8 bg-linear-to-b from-[#e6eefd] via-[#f1f6fe] to-[#f8faff] border-t border-zinc-200 text-zinc-900 relative overflow-hidden selection:bg-emerald-100 selection:text-emerald-900">
+    <section id="contact" className="pt-12 pb-24 px-4 md:px-8 bg-linear-to-b from-[#f2f7ff] via-[#f6f9fe] to-[#f8faff] text-zinc-900 relative overflow-hidden selection:bg-emerald-100 selection:text-emerald-900">
       
       {/* Visual blueprint/grid pattern acting as a professional textured veil */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,44,141,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,44,141,0.03)_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_80%,transparent_100%)] pointer-events-none" />
@@ -61,10 +62,10 @@ export function ContactForm({ selectedBagType }: ContactFormProps) {
             <div className="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center shrink-0 border border-emerald-100 shadow-inner">
               <Phone className="w-6 h-6 stroke-[2]" />
             </div>
-            <div className="flex flex-col text-left">
-              <span className="text-[10px] uppercase font-bold tracking-wider text-zinc-500 font-mono">Téléphone (Sans Frais)</span>
+            <div className="text-left">
               <a 
                 href="tel:18886661996" 
+                onClick={() => trackGAEvent('click_phone', 'Lead Generation', 'Toll-free Link')}
                 className="text-xl sm:text-2xl font-mono font-bold tracking-tight text-zinc-950 hover:text-emerald-600 transition-colors"
               >
                 1-888-666-1996
@@ -77,11 +78,11 @@ export function ContactForm({ selectedBagType }: ContactFormProps) {
             <div className="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center shrink-0 border border-emerald-100 shadow-inner">
               <Mail className="w-6 h-6 stroke-[2]" />
             </div>
-            <div className="flex flex-col text-left overflow-hidden min-w-0">
-              <span className="text-[10px] uppercase font-bold tracking-wider text-zinc-500 font-mono">Courriel</span>
+            <div className="text-left overflow-hidden min-w-0">
               <a 
                 href="mailto:info@distributiongp.ca" 
-                className="text-lg sm:text-xl font-bold tracking-tight text-zinc-950 hover:text-emerald-600 transition-colors truncate"
+                onClick={() => trackGAEvent('click_email', 'Lead Generation', 'Direct Email Link')}
+                className="text-lg sm:text-2xl font-bold tracking-tight text-zinc-950 hover:text-emerald-600 transition-colors truncate"
               >
                 info@distributiongp.ca
               </a>

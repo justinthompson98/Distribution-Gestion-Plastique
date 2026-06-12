@@ -18,9 +18,20 @@ export function Products({ onSelectProduct }: ProductsProps) {
     const currentText = texts[id] !== undefined ? texts[id] : defaultText;
     const isDash = currentText === "-" || currentText.trim() === "-" || currentText.trim() === "";
     
+    // Clean up baseClasses to remove font-mono, font-black, and standard large text sizes for complete consistency
+    let cleanedBaseClasses = baseClasses
+      .replace(/\bfont-mono\b/g, '')
+      .replace(/\btext-lg\b/g, '')
+      .replace(/\bmd:text-xl\b/g, '')
+      .replace(/\bfont-black\b/g, '')
+      .trim();
+    
+    // Ensure font-sans is default, size is text-base md:text-lg, and weights are font-extrabold
+    cleanedBaseClasses = `font-sans text-base md:text-lg font-extrabold ${cleanedBaseClasses}`;
+
     const finalClasses = isDash
-      ? `${padding} text-center ${borderRight ? 'border-r border-zinc-200' : ''} text-zinc-400 font-medium text-lg md:text-xl bg-zinc-50/10`
-      : `${padding} text-center ${borderRight ? 'border-r border-zinc-200' : ''} ${baseClasses}`;
+      ? `${padding} text-center ${borderRight ? 'border-r border-zinc-200' : ''} text-zinc-950 font-extrabold font-sans text-base md:text-lg bg-zinc-50/10`
+      : `${padding} text-center ${borderRight ? 'border-r border-zinc-200' : ''} ${cleanedBaseClasses}`;
 
     return (
       <td className={finalClasses}>
@@ -34,7 +45,7 @@ export function Products({ onSelectProduct }: ProductsProps) {
       id: "ultra_eco",
       name: "Sacs de Pneu Ultra-Économiques",
       thickness: "0.9 MIL",
-      dimensions: '36¨ x 8¨ x 47¨',
+      dimensions: '36" x 8" x 47"',
       badge: "Prix d'entrée imbattable",
       icon: Layers,
       color: "zinc",
@@ -45,7 +56,7 @@ export function Products({ onSelectProduct }: ProductsProps) {
       id: "economique",
       name: "Sacs de Pneu Économiques",
       thickness: "1.0 MIL",
-      dimensions: '36¨ x 8¨ x 47¨',
+      dimensions: '36" x 8" x 47"',
       badge: "Excellent rapport qualité/prix",
       icon: Percent,
       color: "emerald",
@@ -56,7 +67,7 @@ export function Products({ onSelectProduct }: ProductsProps) {
       id: "standard",
       name: "Sacs de Pneu Standards",
       thickness: "1.1 MIL",
-      dimensions: '36¨ x 8¨ x 47¨',
+      dimensions: '36" x 8" x 47"',
       badge: "Recommandé / Choix Populaire",
       icon: ShieldCheck,
       color: "emerald",
@@ -67,7 +78,7 @@ export function Products({ onSelectProduct }: ProductsProps) {
       id: "premium",
       name: "Sacs de Pneu Premium",
       thickness: "1.2 MIL",
-      dimensions: '36¨ x 8¨ x 47¨',
+      dimensions: '36" x 8" x 47"',
       badge: "Épaisseur maximale / Robustesse",
       icon: Sparkles,
       color: "amber",
@@ -92,7 +103,7 @@ export function Products({ onSelectProduct }: ProductsProps) {
   ];
 
   return (
-    <section id="tarifs" className="py-20 px-4 md:px-8 bg-linear-to-b from-[#e6eefd] via-[#f1f6fe] to-[#f8faff] border-t border-b border-zinc-200 text-zinc-900 relative overflow-hidden selection:bg-emerald-100 selection:text-emerald-900 scroll-mt-22">
+    <section id="tarifs" className="py-20 px-4 md:px-8 bg-linear-to-b from-[#e6eefd] via-[#f1f6fe] to-[#f8faff] border-t border-b border-zinc-200 text-zinc-900 relative overflow-hidden selection:bg-blue-100 selection:text-blue-900 scroll-mt-22">
       
       {/* Visual blueprint/grid pattern acting as a professional textured veil */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,44,141,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,44,141,0.03)_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_80%,transparent_100%)] pointer-events-none" />
@@ -104,28 +115,26 @@ export function Products({ onSelectProduct }: ProductsProps) {
         
         {/* Official Pricing Grid Matrice Table */}
         <div className="bg-white rounded-3xl border border-zinc-200/90 shadow-xl overflow-hidden mb-4">
-          <div className="py-3 px-5 md:px-6 bg-zinc-950 text-white border-b border-zinc-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-1.5">
-            <div className="flex items-center gap-2.5">
-              <div className="bg-emerald-500 text-zinc-950 p-2 rounded-xl">
+          <div className="py-4 px-5 md:px-6 bg-zinc-950 text-white border-b border-zinc-800 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="bg-blue-900 text-white p-2 rounded-xl shrink-0">
                 <FileSpreadsheet className="w-6 h-6 stroke-[2]" />
               </div>
-              <div>
-                <h3 className="text-xl md:text-2xl font-black text-white tracking-tight flex items-center gap-2">
-                  <EditableText id="price-title" defaultText="GRILLE TARIFAIRE OFFICIELLE" />
-                </h3>
-                <p className="text-xs md:text-sm text-zinc-400 font-medium mt-0.5">
-                  <EditableText id="price-subtitle" defaultText="** Les prix affichés sont selon les conditions ci-dessous" />
-                </p>
-                <div className="flex flex-wrap items-center gap-x-2 mt-1.5 text-sm md:text-base text-white font-black">
-                  <EditableText id="price-specs-roll" defaultText="200 sacs par rouleau" />
-                  <span className="text-emerald-400 font-black">•</span>
-                  <EditableText id="price-specs-dimensions" defaultText="Sacs de 36¨ x 8¨ x 47¨" />
-                </div>
-              </div>
+              <h3 className="text-xl md:text-2xl font-black text-white tracking-tight">
+                <EditableText id="price-title" defaultText="GRILLE TARIFAIRE OFFICIELLE" />
+              </h3>
             </div>
             
-            
-
+            <div className="flex flex-col items-start lg:items-end text-left lg:text-right gap-1.5">
+              <p className="text-xs md:text-sm text-zinc-400 font-semibold">
+                <EditableText id="price-subtitle" defaultText="** Les prix affichés sont selon les conditions ci-dessous" />
+              </p>
+              <div className="flex flex-wrap items-center lg:justify-end gap-x-2 text-sm md:text-base text-zinc-300 font-bold">
+                <EditableText id="price-specs-roll" defaultText="200 sacs par rouleau" />
+                <span className="text-blue-900 font-black">•</span>
+                <EditableText id="price-specs-dimensions" defaultText='Sacs de 36" x 8" x 47"' />
+              </div>
+            </div>
           </div>
 
           <div className="overflow-x-auto">
@@ -138,17 +147,17 @@ export function Products({ onSelectProduct }: ProductsProps) {
                   <th className="py-3 px-3 bg-zinc-100 text-zinc-500 text-sm md:text-base uppercase tracking-widest font-black text-center border-b border-zinc-200 w-1/4">
                     <EditableText id="col-thickness-label" defaultText="ÉPAISSEUR" />
                   </th>
-                  <th colSpan={4} className="py-3 px-3 bg-emerald-500 text-white text-sm md:text-lg font-black tracking-widest uppercase text-center border-b border-emerald-600 shadow-inner">
+                  <th colSpan={4} className="py-3 px-3 bg-blue-900 text-white text-sm md:text-lg font-black tracking-widest uppercase text-center border-b border-blue-950/20 shadow-inner">
                     <EditableText id="col-impression-label" defaultText="OPTIONS D'IMPRESSION SUR SACS" />
                   </th>
                 </tr>
                 
                 {/* Specific option headers */}
                 <tr className="bg-zinc-50 font-extrabold border-b border-zinc-200 text-sm md:text-base text-zinc-800">
-                  <th className="py-2.5 px-3 border-r border-zinc-200 font-black text-zinc-955 text-center">
+                  <th className="py-2.5 px-3 border-r border-zinc-200 font-black text-zinc-950 text-center">
                     <EditableText id="subcol-thickness" defaultText="SPÉCIFICATION" />
                   </th>
-                  <th className="py-2.5 px-3 text-center border-r border-zinc-200 text-emerald-900 bg-emerald-50/50 font-black">
+                  <th className="py-2.5 px-3 text-center border-r border-zinc-200 text-zinc-950 bg-zinc-50/30 font-black">
                     <EditableText id="subcol-color2" defaultText="2 Couleurs" />
                   </th>
                   <th className="py-2.5 px-3 text-center border-r border-zinc-200 text-zinc-950 bg-zinc-50/30 font-black">
@@ -163,11 +172,11 @@ export function Products({ onSelectProduct }: ProductsProps) {
                 </tr>
               </thead>
 
-              <tbody className="text-base md:text-lg font-bold text-zinc-900">
+              <tbody className="text-base md:text-lg font-extrabold text-zinc-900">
                 
                 {/* 0.9 MIL */}
                 <tr className="border-b border-zinc-100 hover:bg-zinc-50/50 transition-colors">
-                  <td className="py-2.5 px-3 border-r border-zinc-200 font-extrabold text-zinc-950 bg-zinc-50/30 text-sm md:text-base">
+                  <td className="py-2.5 px-3 border-r border-zinc-200 font-extrabold text-zinc-950 bg-zinc-50/30 text-base md:text-lg">
                     <div className="flex items-center gap-1.5 justify-center">
                       <EditableText id="row-09-name" defaultText="0.9 MIL" />
                     </div>
@@ -180,10 +189,10 @@ export function Products({ onSelectProduct }: ProductsProps) {
 
                 {/* 1.0 MIL */}
                 <tr className="border-b border-zinc-100 hover:bg-zinc-50/50 transition-colors">
-                  <td className="py-2.5 px-3 border-r border-zinc-200 font-extrabold text-zinc-955 bg-zinc-50/30 text-sm md:text-base">
+                  <td className="py-2.5 px-3 border-r border-zinc-200 font-extrabold text-zinc-950 bg-zinc-50/30 text-base md:text-lg">
                     <div className="flex flex-col items-center gap-0.5 justify-center">
                       <EditableText id="row-10-name" defaultText="1.0 MIL" />
-                      <span className="text-[10px] text-emerald-600 font-black bg-emerald-50 px-1.5 py-0.5 rounded leading-none">(Économique)</span>
+                      <span className="text-[10px] text-blue-900 font-black bg-blue-50 px-1.5 py-0.5 rounded leading-none">(Économique)</span>
                     </div>
                   </td>
                   {renderCell("val-10-c2", "90.00 $", "text-zinc-950 font-black font-mono text-lg md:text-xl bg-zinc-50/5", true, "py-2.5 px-3")}
@@ -193,14 +202,14 @@ export function Products({ onSelectProduct }: ProductsProps) {
                 </tr>
 
                 {/* 1.1 MIL */}
-                <tr className="border-b border-zinc-100 ring-2 ring-emerald-500/10 hover:bg-zinc-50/50 transition-colors bg-emerald-50/5">
-                  <td className="py-2.5 px-3 border-r border-zinc-200 font-extrabold text-emerald-900 bg-emerald-50/20 text-sm md:text-base">
+                <tr className="border-b border-zinc-100 hover:bg-zinc-50/50 transition-colors">
+                  <td className="py-2.5 px-3 border-r border-zinc-200 font-extrabold text-zinc-950 bg-zinc-50/30 text-base md:text-lg">
                     <div className="flex flex-col items-center gap-0.5 justify-center">
                       <EditableText id="row-11-name" defaultText="1.1 MIL" />
-                      <span className="text-[10px] text-emerald-800 font-black bg-emerald-100 px-1.5 py-0.5 rounded leading-none uppercase">Standard</span>
+                      <span className="text-[10px] text-zinc-700 bg-zinc-50 border border-zinc-200/90 px-1.5 py-0.5 rounded font-bold leading-none uppercase">Standard</span>
                     </div>
                   </td>
-                  {renderCell("val-11-c2", "102.00 $", "text-emerald-900 font-black font-mono text-lg md:text-xl bg-emerald-55/15", true, "py-2.5 px-3")}
+                  {renderCell("val-11-c2", "102.00 $", "text-zinc-950 font-black font-mono text-lg md:text-xl bg-zinc-50/5", true, "py-2.5 px-3")}
                   {renderCell("val-11-c1", "88.00 $", "text-zinc-950 font-black font-mono text-lg md:text-xl bg-zinc-50/5", true, "py-2.5 px-3")}
                   {renderCell("val-11-none", "-", "text-zinc-950 font-black font-mono text-lg md:text-xl bg-zinc-50/5", true, "py-2.5 px-3")}
                   {renderCell("val-11-trans", "-", "bg-zinc-100/30 text-zinc-950 font-black font-mono text-lg md:text-xl", false, "py-2.5 px-3")}
@@ -208,7 +217,7 @@ export function Products({ onSelectProduct }: ProductsProps) {
 
                 {/* 1.2 MIL */}
                 <tr className="border-b border-zinc-200 hover:bg-zinc-50/50 transition-colors">
-                  <td className="py-2.5 px-3 border-r border-zinc-200 font-extrabold text-zinc-950 bg-zinc-50/30 text-sm md:text-base">
+                  <td className="py-2.5 px-3 border-r border-zinc-200 font-extrabold text-zinc-950 bg-zinc-50/30 text-base md:text-lg">
                     <div className="flex flex-col items-center gap-0.5 justify-center">
                       <EditableText id="row-12-name" defaultText="1.2 MIL" />
                       <span className="text-[10px] text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded font-black leading-none">(Premium)</span>
@@ -222,12 +231,12 @@ export function Products({ onSelectProduct }: ProductsProps) {
 
                 {/* Plaque d'impression */}
                 <tr className="border-b border-zinc-200 bg-zinc-50/40 hover:bg-zinc-100/80 transition-colors">
-                  <td className="py-2.5 px-3 border-r border-zinc-200 font-extrabold text-zinc-950 bg-zinc-50/30 text-sm md:text-base text-center">
+                  <td className="py-2.5 px-3 border-r border-zinc-200 font-extrabold text-zinc-950 bg-zinc-50/30 text-base md:text-lg text-center">
                     <div className="flex flex-col items-center justify-center">
                       <EditableText id="row-plate-name" defaultText="Plaque d'impression" />
                     </div>
                   </td>
-                  <td colSpan={2} className="py-2.5 px-3 border-r border-zinc-200 text-center text-zinc-950 font-extrabold text-sm md:text-base bg-zinc-50/10">
+                  <td colSpan={2} className="py-2.5 px-3 border-r border-zinc-200 text-center text-zinc-950 font-extrabold text-base md:text-lg bg-zinc-50/10">
                     <EditableText id="row-plate-cost" defaultText="Coût unique de 300$" />
                   </td>
                   {renderCell("val-plate-none", "-", "text-zinc-950 font-black font-mono text-lg md:text-xl bg-zinc-50/5", true, "py-2.5 px-3")}
@@ -247,19 +256,19 @@ export function Products({ onSelectProduct }: ProductsProps) {
             <div className="py-4 px-4 bg-zinc-50/50 flex flex-col md:flex-row justify-center items-center gap-6 md:gap-16">
               {/* Prix par rouleau */}
               <div className="flex gap-2 items-center">
-                <span className="text-emerald-500 text-sm font-black shrink-0">**</span>
+                <span className="text-blue-900 text-sm font-black shrink-0">**</span>
                 <p className="font-bold text-zinc-900 text-xs uppercase tracking-wider">Prix par rouleau</p>
               </div>
 
               {/* Vente à la palette */}
               <div className="flex gap-2 items-center">
-                <span className="text-emerald-500 text-sm font-black shrink-0">**</span>
+                <span className="text-blue-900 text-sm font-black shrink-0">**</span>
                 <p className="font-bold text-zinc-900 text-xs uppercase tracking-wider">Vente à la palette</p>
               </div>
 
               {/* Frais de transport variable */}
               <div className="flex gap-2 items-center">
-                <span className="text-emerald-500 text-sm font-black shrink-0">**</span>
+                <span className="text-blue-900 text-sm font-black shrink-0">**</span>
                 <p className="font-bold text-zinc-900 text-xs uppercase tracking-wider">Frais de transport variable</p>
               </div>
             </div>
