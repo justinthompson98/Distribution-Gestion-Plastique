@@ -97,21 +97,21 @@ export function Hero() {
               </div>
               <div id="editable-spec-qualite-pneu" className="p-5 flex-1 flex flex-col justify-center items-center">
                 <div className="w-fit mx-auto flex flex-col items-start justify-start space-y-3">
-                  <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight flex items-center gap-3 justify-start text-left">
+                  <div className="text-sm md:text-base text-zinc-650 font-normal leading-tight flex items-center gap-3 justify-start text-left">
                     <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
                       <Check className="w-3 h-3 stroke-[3]" />
                     </div>
                     <EditableText id="pneu-qualite-eco" defaultText="Économique 1.0 MIL" />
                   </div>
                   
-                  <div className="text-base md:text-lg text-zinc-900 font-extrabold leading-tight flex items-center gap-3 justify-start text-left">
-                    <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
-                      <Check className="w-3 h-3 md:w-4 md:h-4 stroke-[3]" />
+                  <div className="text-sm md:text-base text-zinc-650 font-normal leading-tight flex items-center gap-3 justify-start text-left">
+                    <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
+                      <Check className="w-3 h-3 stroke-[3]" />
                     </div>
                     <EditableText id="pneu-qualite-std" defaultText="Standard 1.1 MIL" />
                   </div>
                   
-                  <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight flex items-center gap-3 justify-start text-left">
+                  <div className="text-sm md:text-base text-zinc-650 font-normal leading-tight flex items-center gap-3 justify-start text-left">
                     <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
                       <Check className="w-3 h-3 stroke-[3]" />
                     </div>
@@ -130,21 +130,21 @@ export function Hero() {
               </div>
               <div id="editable-spec-dimensions-pneu" className="p-5 flex-1 flex flex-col justify-center items-center">
                 <div className="w-fit mx-auto flex flex-col items-start justify-start space-y-3">
-                  <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight session-edit-dimensions flex items-center gap-3 justify-start text-left">
+                  <div className="text-sm md:text-base text-zinc-650 font-normal leading-tight session-edit-dimensions flex items-center gap-3 justify-start text-left">
                     <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
                       <Check className="w-3 h-3 stroke-[3]" />
                     </div>
                     <EditableText id="pneu-dimension-large" defaultText='Large 30" x 12" x 40"' />
                   </div>
                   
-                  <div className="text-base md:text-lg text-zinc-900 font-extrabold leading-tight flex items-center gap-3 justify-start text-left">
-                    <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
-                      <Check className="w-3 h-3 md:w-4 md:h-4 stroke-[3]" />
+                  <div className="text-sm md:text-base text-zinc-650 font-normal leading-tight flex items-center gap-3 justify-start text-left">
+                    <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
+                      <Check className="w-3 h-3 stroke-[3]" />
                     </div>
                     <EditableText id="pneu-dimension-xl" defaultText='Extra Large 36" x 8" x 47"' />
                   </div>
                   
-                  <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight flex items-center gap-3 justify-start text-left">
+                  <div className="text-sm md:text-base text-zinc-650 font-normal leading-tight flex items-center gap-3 justify-start text-left">
                     <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
                       <Check className="w-3 h-3 stroke-[3]" />
                     </div>
@@ -163,28 +163,28 @@ export function Hero() {
               </div>
               <div id="editable-spec-impression-pneu" className="p-5 flex-1 flex flex-col justify-center items-center">
                 <div className="w-fit mx-auto flex flex-col items-start justify-start space-y-3">
-                  <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight flex items-center gap-3 justify-start text-left">
+                  <div className="text-sm md:text-base text-zinc-650 font-normal leading-tight flex items-center gap-3 justify-start text-left">
                     <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
                       <Check className="w-3 h-3 stroke-[3]" />
                     </div>
                     <EditableText id="pneu-impression-2col" defaultText="2 couleurs" />
                   </div>
                   
-                  <div className="text-base md:text-lg text-zinc-900 font-extrabold leading-tight flex items-center gap-3 justify-start text-left">
-                    <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
-                      <Check className="w-3 h-3 md:w-4 md:h-4 stroke-[3]" />
+                  <div className="text-sm md:text-base text-zinc-650 font-normal leading-tight flex items-center gap-3 justify-start text-left">
+                    <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
+                      <Check className="w-3 h-3 stroke-[3]" />
                     </div>
                     <EditableText id="pneu-impression-1col" defaultText="1 couleur / noir" />
                   </div>
                   
-                  <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight flex items-center gap-3 justify-start text-left">
+                  <div className="text-sm md:text-base text-zinc-650 font-normal leading-tight flex items-center gap-3 justify-start text-left">
                     <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
                       <Check className="w-3 h-3 stroke-[3]" />
                     </div>
                     <EditableText id="pneu-impression-sans-blanc" defaultText="Sans impression (blanc)" />
                   </div>
 
-                  <div className="text-sm md:text-base text-zinc-650 font-semibold leading-tight flex items-center gap-3 justify-start text-left">
+                  <div className="text-sm md:text-base text-zinc-650 font-normal leading-tight flex items-center gap-3 justify-start text-left">
                     <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex items-center justify-center shrink-0 shadow-xs">
                       <Check className="w-3 h-3 stroke-[3]" />
                     </div>
